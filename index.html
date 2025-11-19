@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AulaMetrics</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+</head>
+
+<body style="
+    background-image: url('fondo-negro-neon.png'); 
+    background-size: cover; 
+    background-attachment: fixed; 
+    margin: 0; 
+    padding: 0;
+">
+
+    <div id="particles-js" style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -2; /* Se queda detrás de la capa oscura y del texto */
+    "></div>
+
+    <div style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6); /* 60% de oscuridad */
+        z-index: -1; /* Se queda detrás del texto */
+    "></div>
+
+    <header class="hero-section">
+        <div class="hero-container">
+            <img src="isotipo.png" alt="Logo AulaMetrics" class="hero-logo">
+            <h1 class="gradient-title">AulaMetrics</h1>
+        </div>
+    </header>
+
+    <main class="hero-section">
+        <a href="https://proyecto-aulametrics-megjns8zh8ud3sbbgqwpaq.streamlit.app/" class="login-button">
+            🚀 Empezar Ahora
+        </a>
+    </main>
+    
+    <section class="content-section">
+        <div class="column-container">
+            
+            <div class="column">
+                <div class="info-box-header">
+                    ¿Quiénes Somos?
+                </div>
+                <div class="info-box-content">
+                    <p>Somos una plataforma pedagógica diseñada para transformar datos en conocimiento útil. Analizamos calificaciones y patrones de desempeño estudiantil para generar informes claros, interpretaciones estadísticas y propuestas de mejora.</p>
+                    <h3>Misión</h3>
+                    <p>Brindar a los docentes una herramienta pedagógica confiable que analiza de manera rigurosa las calificaciones y datos de aprendizaje de los estudiantes, ofreciendo informes y recomendaciones basadas en evidencia.</p>
+                    <h3>Visión</h3>
+                    <p>Convertirnos en la herramienta líder en el análisis educativo dentro de las instituciones, reconocida por impulsar una cultura de evaluación formativa, innovación pedagógica y mejora permanente.</p>
+                </div>
+            </div>
+            
+            <div class="column">
+                <div class="info-box-header">
+                    Nuestros Planes
+                </div>
+                <div class="info-box-content">
+                    <h3>Plan Gratuito</h3>
+                    <ul class="plan-features">
+                        <li>✔️ Análisis de archivos</li>
+                        <li>✔️ Análisis de las dos primeras hojas (áreas)</li>
+                        <li>✔️ Tabla de frecuencias y porcentajes</li>
+                        <li>✔️ Gráficos de barras para los datos</li>
+                        <li>✔️ Opción de exportar a Excel</li>
+                    </ul>
+                    <h3>⭐ Plan Premium</h3>
+                    <ul class="plan-features">
+                        <li>✔️ Todas las funciones gratuitas</li>
+                        <li>✔️ Elección entre gráficos estadísticos</li>
+                        <li>✔️ Propuestas de mejora</li>
+                        <li>✔️ Opción de exportar tablas y propuestas</li>
+                        <li>✔️ Análisis de todas las hojas del archivo</li>
+                        <li>✔️ Acceso a todas las nuevas funcionalidades</li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            
+            <a href="https://www.tiktok.com/@tu_usuario_tiktok" class="social-button tiktok-btn">
+                Síguenos en TikTok
+            </a>
+            
+            <hr> 
+
+            <h3>¡Queremos saber tu opinión!</h3>
+            <p>
+              Envíanos tus sugerencias para mejorar la página, 
+              ideas para nuevas funciones o cualquier retroalimentación a nuestro correo oficial:
+            </p>
+
+            <p style="font-size: 1.1em;">
+                📧 <strong>aulametricsia@gmail.com</strong>
+            </p>
+        </div>
+        <p>© 2025 AulaMetrics. Todos los derechos reservados.</p>
+    </footer>
+
+    
+    <script>
+        // Lógica de las columnas desplegables (esto se queda igual)
+        var columns = document.querySelectorAll('.column');
+        columns.forEach(function(column) {
+            var header = column.querySelector('.info-box-header');
+            var content = column.querySelector('.info-box-content');
+            
+            header.addEventListener('click', function() {
+                header.classList.toggle('active');
+                content.classList.toggle('active');
+            });
+        });
+
+        // 4. CONFIGURACIÓN DE LAS PARTÍCULAS (MODIFICADO)
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { 
+                    "value": 60, 
+                    "density": { "enable": true, "value_area": 800 } 
+                },
+                "color": { "value": "#ffffff" }, // Color blanco
+                "shape": { "type": "circle" },
+                
+                // --- CAMBIO 1: INTENSIDAD (OPACIDAD) ---
+                "opacity": { 
+                    "value": 1.5, // Antes era 0.5. Ahora brilla más (casi 1.0)
+                    "random": false 
+                },
+                
+                // --- CAMBIO 2: TAMAÑO ---
+                "size": { 
+                    "value": 8, // Antes era 3. Ahora son el doble de grandes.
+                    "random": true // 'true' hace que unas sean grandes y otras pequeñas
+                },
+                
+                // Configuración de las líneas que conectan
+                "line_linked": { 
+                    "enable": true, 
+                    "distance": 150, 
+                    "color": "#ffffff", 
+                    "opacity": 0.6, // También subí un poco el brillo de las líneas
+                    "width": 1 
+                },
+                "move": { 
+                    "enable": true, 
+                    "speed": 2, 
+                    "direction": "none", 
+                    "random": false, 
+                    "straight": false, 
+                    "out_mode": "out", 
+                    "bounce": false 
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": { "enable": true, "mode": "grab" },
+                    "onclick": { "enable": true, "mode": "push" },
+                    "resize": true
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
